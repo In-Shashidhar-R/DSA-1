@@ -1,0 +1,139 @@
+#include<stdio.h>
+int main()
+{
+    int a[100],n,i,b[100],k,c,p,d[100],v,m[100],z,j,o[100],u[100],q;
+    printf("Enter a length of the array: ");
+    scanf("%d",&n);
+    printf("\n 1.Transverse");
+    printf("\n 2.Insertion in beginning");
+    printf("\n 3.Insertion in last");
+    printf("\n 4.Insertion in particular position  ");
+    printf("\n 5.Deletion of particular position");
+    printf("\n 6.Deletion of element from readers choice");
+    printf("\n 7.Deletion of first element");
+    printf("\n 8.Deletion of last element");
+    printf("\n 9.Search of element");
+    printf("\n Enter your choice: ");
+    scanf("%d",&c);
+    for(i=1;i<=n;i++)
+    {
+        printf("Enter a number: ");
+        scanf("%d",&a[i]);
+    }
+    if(c==1)
+    {
+    for(i=1;i<=n;i++)
+    {
+        printf("\t %d",a[i]);
+    }
+    }
+    if(c==2)
+    {
+    for(i=1;i<=n;i++)
+    {
+        b[i+1]=a[i];
+    }
+    printf("\n Enter a number");
+    scanf("%d",&b[1]);
+    for(i=1;i<=n+1;i++)
+    {
+        printf("\t %d",b[i]);
+    }
+    }
+    if(c==3)
+    {
+    printf("Enter a number");
+    scanf("%d",&a[n+1]);
+    for(i=1;i<=n+1;i++)
+    {
+        printf("\t %d",a[i]);
+    }
+    }
+    if(c==4)
+    {
+    printf("Enter a position to add a element: ");
+    scanf("%d",&p);
+    printf("\n Enter a element: ");
+    scanf("%d",&d[p]);
+    for(i=1;i<p;i++)
+    {
+        d[i]=a[i];
+    }
+    for(i=p;i<=n;i++)
+    {
+        d[i+1]=a[i];
+    }
+    printf("\n");
+     for(i=1;i<=n+1;i++)
+    {
+        printf("\t %d",d[i]);
+    }
+    }
+    if(c==5)
+    {
+        printf("Enter the position to be deleted: ");
+        scanf("%d",&v);
+        for(i=1;i<v;i++)
+        {
+            m[i]=a[i];
+        }
+        for(i=v+1;i<=n;i++)
+        {
+            m[i-1]=a[i];
+        }
+        for(i=1;i<=n-1;i++)
+        {
+        printf("\t %d",m[i]);
+        }
+    }
+    if(c==6)
+    {
+        printf("Enter a number to be deleted: ");
+        scanf("%d",&z);
+        for(i=1;i<=n;i++)
+        {
+            if(z==a[i])
+            {
+               for(j=i;j<=n-1;j++)
+               {
+               a[j]=a[j+1];
+               }
+            }
+        }
+         for(i=1;i<=n-1;i++)
+        {
+        printf("\t %d",a[i]);
+        }
+    }
+    if(c==7)
+    {
+        for(i=1;i<=n;i++)
+        {
+            o[i]=a[i+1];
+        }
+        for(i=1;i<=n-1;i++)
+        {
+            printf("\t %d",o[i]);
+        }
+    }
+    if(c==8)
+    {
+        for(i=1;i<n;i++)
+        {
+            printf("\t %d",a[i]);
+        }
+    }
+    if(c==9)
+    {
+        printf("Enter a number: ");
+        scanf("%d",&q);
+        for(i=1;i<=n;i++)
+        {
+            if(q==a[i])
+            {
+                printf("The position of the given element is: %d",i);
+            }
+        }
+    }
+    return 0;
+}
